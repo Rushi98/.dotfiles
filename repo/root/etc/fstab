@@ -1,0 +1,19 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+# /dev/sda6
+UUID=REDACTED	/         	ext4      	rw,relatime,data=ordered	0 1
+
+# /dev/sda5
+UUID=REDACTED	/boot     	ext4      	rw,relatime,data=ordered	0 2
+
+#custom /tmp
+tmpfs	/tmp	tmpfs	rw,nodev,nosuid,size=40G	0	0
+
+# windows d: drive (sink)
+# Mount internal Windows partition with linux compatible permissions, i.e. 755 for directories (dmask=022) and 644 for files (fmask=133)
+/dev/sda4 /run/media/rushi/sink ntfs-3g	rw,uid=rushi,gid=users,comment=x-gvfs-show	0	0
+/dev/sda2 /run/media/rushi/windows ntfs-3g rw,uid=rushi,gid=users,comment=x-gvfs-show	0	0
+# /dev/sdb2 /run/media/rushi/oldie ntfs-3g	uid=rushi,gid=users,nofail	0	0
+
