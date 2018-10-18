@@ -28,3 +28,6 @@ man() {
 export PATH="~/.gem/ruby/2.5.0/bin":$PATH
 . /etc/profile.d/vte.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias start-vpn='sudo systemctl start openvpn-client@protonvpn'
+alias stop-vpn='sudo systemctl start openvpn-client@protonvpn'
