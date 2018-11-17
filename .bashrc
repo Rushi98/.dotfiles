@@ -31,3 +31,4 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias start-vpn='sudo systemctl start openvpn-client@protonvpn'
 alias stop-vpn='sudo systemctl start openvpn-client@protonvpn'
+alias merge-pfd='gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite '
