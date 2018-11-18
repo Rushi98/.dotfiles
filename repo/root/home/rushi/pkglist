@@ -30,6 +30,7 @@ breeze-icons
 bridge-utils
 bwidget
 bzip2
+canta-gtk-theme
 capitaine-cursors
 capitaine-cursors-hidpi
 cask
@@ -56,6 +57,7 @@ drive
 dunst
 e2fsprogs
 efibootmgr
+eiskaltdcpp-qt
 elinks
 emacs
 emacs-pdf-tools-git

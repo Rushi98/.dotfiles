@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Windows 10 Virtual Machine
+Comment=
+Exec=virtualbox --startvm 'Windows 10'
+Icon=/home/rushi/.local/share/applications/Windows_logo.svg
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Accessories
