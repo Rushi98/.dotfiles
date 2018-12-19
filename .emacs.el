@@ -14,7 +14,7 @@
  '(muse-project-alist nil)
  '(package-selected-packages
    (quote
-    (rainbow-mode python org notes-mode muse mmm-mode math-symbol-lists jsonrpc js2-mode json-mode)))
+    (matlab-mode rainbow-mode python org notes-mode muse mmm-mode math-symbol-lists jsonrpc js2-mode json-mode)))
  '(save-place t)
  '(scroll-bar-mode nil))
 (custom-set-faces
