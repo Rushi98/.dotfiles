@@ -8,11 +8,9 @@
 alias ls='ls --color=auto'
 PS1="[\u \W]\$ "
 #PS1='[\u@\h \W]\$ '
-export PATH="/home/rushi/android-studio/bin":$PATH
-# unlimited history
-export HISTSIZE=-1
+export PATH="~/android-studio/bin":$PATH
 export VISUAL="vim"
-export ANDROID_SDK_ROOT=/home/rushi/Android/Sdk
+export ANDROID_SDK_ROOT=~/Android/Sdk
 alias pwd='pwd -P'
 export BROWSER=`which google-chrome-stable`
 alias diff='diff --color=auto'
@@ -27,12 +25,10 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
-# export PATH="~/.gem/ruby/2.5.0/bin":$PATH
+export PATH="~/.gem/ruby/2.5.0/bin":$PATH
 . /etc/profile.d/vte.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias start-vpn='sudo systemctl start openvpn-client@protonvpn'
 alias stop-vpn='sudo systemctl start openvpn-client@protonvpn'
-alias merge-pdf='gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite '
-source ~/.local/bin/package-management-aliases
-source ~/.local/bin/ffmpeg-scripts
+alias merge-pfd='gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite '

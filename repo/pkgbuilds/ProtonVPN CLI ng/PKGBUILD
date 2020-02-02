@@ -1,0 +1,25 @@
+# Maintainer: Rushikesh Jogdand <jogdand at pm dot me>
+# Contributor: exprez135 <exprezdev at pm dot me>
+
+pkgname=protonvpn-cli-ng
+pkgver=2.2.1
+pkgrel=1
+pkgdesc='A Linux CLI for ProtonVPN'
+arch=("any")
+url="https://github.com/ProtonVPN/protonvpn-cli-ng"
+license=("GPL3")
+depends=("openvpn" "python" "dialog" "python-pythondialog" "python-setuptools" "python-docopt" "python-requests")
+replaces=("protonvpn-cli")
+source=("https://github.com/ProtonVPN/$pkgname/archive/v$pkgver.tar.gz")
+md5sums=('c45cfc9b116d6086e46d5eaf802e0068')
+
+_protonvpn_src_dir="$pkgname-$pkgver"
+
+package() {
+    # Define paths
+    _protonvpn_src_dir="${srcdir}/${_protonvpn_src_dir}"
+  
+    # Install protonvpn-cli-ng package
+    cd "${_protonvpn_src_dir}"
+    python setup.py install --optimize=1 --root="$pkgdir" 
+}

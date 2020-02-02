@@ -1,14 +1,14 @@
 -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'
---write-description
---write-info-json
---write-annotations
---write-all-thumbnails
---write-sub
---write-auto-sub
---all-subs
+#--write-description
+#--write-info-json
+#--write-annotations
+#--write-all-thumbnails
+#--write-sub
+#--write-auto-sub
+#--all-subs
 --audio-quality 0
 --embed-subs
-#--embed-thumbnail
+--embed-thumbnail
 --add-metadata
 --xattrs
-
+--ignore-errors

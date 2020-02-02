@@ -1,0 +1,24 @@
+# Maintainer: Rushikesh Jogdand <jogdand at pm dot me>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Althorion <althorion@protonmail.com>
+# Contributor: Jordan Day <jordanday444 at gmail.com>
+
+pkgname=ttf-jetbrains-mono
+_pkgname=JetBrainsMono
+pkgver=1.0.2
+pkgrel=1
+pkgdesc='A free and open source typeface for developers'
+arch=(any)
+url='https://www.jetbrains.com/lp/mono'
+license=(Apache)
+source=("https://download.jetbrains.com/fonts/$_pkgname-$pkgver.zip")
+md5sums=('bbc058e59afe10f724f853f7959b5aeb')
+depends=(fontconfig xorg-font-utils)
+
+package() {
+  cd "$_pkgname-$pkgver"
+  install -d "$pkgdir/usr/share/fonts/TTF"
+  install -Dm 644 ttf/*.ttf "$pkgdir/usr/share/fonts/TTF/"
+}
+
+# vim: ts=2 sw=2 et:
