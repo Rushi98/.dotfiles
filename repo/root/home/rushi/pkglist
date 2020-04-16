@@ -31,6 +31,7 @@ base
 bash
 bash-completion
 biber
+bind-tools
 binutils
 bison
 bluez-utils
@@ -70,12 +71,12 @@ discount
 diskmonitor
 ditaa
 dmidecode
-dnsmasq
 dolphin
 dunst
 e2fsprogs
 easy-rsa
 efibootmgr
+eiskaltdcpp-daemon-git
 eiskaltdcpp-qt-git
 electron3-bin
 elinks
@@ -226,6 +227,7 @@ less
 lib32-mesa
 lib32-mesa-vdpau
 libgdm
+libmicrodns
 libmythes
 liboggz
 libtool
@@ -335,6 +337,7 @@ plasma-desktop
 plasma-nm
 plasma-pa
 playerctl
+plex-media-server
 polkit-gnome
 postgresql-libs
 powerdevil

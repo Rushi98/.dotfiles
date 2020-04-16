@@ -1,0 +1,50 @@
+#!/bin/sh
+
+function update_sys()
+{
+        sudo pacman -Syu;
+}       
+
+function update_aur()
+{
+        aur sync -u;
+}       
+
+function install_pkg()
+{
+        update_sys
+        sudo pacman -S "$@";
+}       
+
+function delete_aur_pkg()
+{
+        repo-remove /home/custompkgs/custom.db.tar "$@";
+        for pkg in $@;
+        do
+                rm --interactive -v /home/custompkgs/${pkg}*
+        done    
+}       
+
+function uninstall_pkg()
+{
+        sudo pacman -Rs "$@";
+        for pkg in $@;
+        do
+                sudo rm --interactive -v /var/cache/pacman/pkg/${pkg}*
+        done    
+            
+        delete_aur_pkg "$@";
+}  
+
+function install_aur_pkg()
+{
+        aur sync --provides -f --rebuild "$@";
+        install_pkg "$@";
+}
+
+
+function update_all() {
+        update_sys
+        update_aur
+}
+

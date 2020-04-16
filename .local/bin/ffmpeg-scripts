@@ -1,0 +1,9 @@
+#!/bin/bash
+function stream_info()
+{
+	ffprobe -v quiet \
+		-print_format json \
+		-show_format \
+		-show_streams \
+		"$@"
+}
