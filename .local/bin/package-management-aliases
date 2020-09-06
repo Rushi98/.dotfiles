@@ -1,7 +1,13 @@
 #!/bin/sh
 
+function update_mirrors()
+{
+	sudo reflector --verbose --country 'United States' --latest 200 --age 24 --sort rate --save /etc/pacman.d/mirrorlist
+}
+
 function update_sys()
 {
+	sudo rm -f /etc/pacman.d/mirrorlist.pacnew
         sudo pacman -Syu;
 }       
 
@@ -12,8 +18,7 @@ function update_aur()
 
 function install_pkg()
 {
-        update_sys
-        sudo pacman -S "$@";
+        sudo pacman -Syu "$@";
 }       
 
 function delete_aur_pkg()
@@ -21,16 +26,18 @@ function delete_aur_pkg()
         repo-remove /home/custompkgs/custom.db.tar "$@";
         for pkg in $@;
         do
-                rm --interactive -v /home/custompkgs/${pkg}*
+                rm --recursive --interactive -v /home/custompkgs/${pkg}*
+		rm --recursive --force -v ~/.cache/aurutils/sync/${pkg}
         done    
 }       
 
 function uninstall_pkg()
 {
         sudo pacman -Rs "$@";
+	sudo pacman -Sc;
         for pkg in $@;
         do
-                sudo rm --interactive -v /var/cache/pacman/pkg/${pkg}*
+                sudo rm --recursive --interactive -v /var/cache/pacman/pkg/${pkg}*
         done    
             
         delete_aur_pkg "$@";
@@ -38,6 +45,7 @@ function uninstall_pkg()
 
 function install_aur_pkg()
 {
+	update_all;
         aur sync --provides -f --rebuild "$@";
         install_pkg "$@";
 }
@@ -48,3 +56,7 @@ function update_all() {
         update_aur
 }
 
+function why() {
+	pactree -r "$@";
+	pacman -Qi "$@";
+}

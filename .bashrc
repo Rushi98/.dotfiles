@@ -1,4 +1,4 @@
-#
+
 # ~/.bashrc
 #
 
@@ -34,5 +34,8 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias start-vpn='sudo systemctl start openvpn-client@protonvpn'
 alias stop-vpn='sudo systemctl start openvpn-client@protonvpn'
 alias merge-pdf='gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite '
-source ~/.local/bin/package-management-aliases
-source ~/.local/bin/ffmpeg-scripts
+
+for script in package-management-aliases ffmpeg-scripts browser-tricks fetchie
+do
+	source "$HOME/.local/bin/$script"
+done

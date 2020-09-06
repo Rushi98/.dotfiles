@@ -1,0 +1,7 @@
+#!/bin/bash
+function fetchie()
+{
+	local url="https://pdf.indianexpress.com/pdfupload/nimf/ie-mumbai-$(date +%d-%m-%Y).pdf"
+	local outputFile="/home/rushi/Downloads/Indian Express.pdf"
+	curl $url --output $outputFile
+}

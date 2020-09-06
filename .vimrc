@@ -10,3 +10,4 @@ let g:tex_flavor = "latex"
 
 set foldenable
 set foldmethod=syntax
+set smartindent
